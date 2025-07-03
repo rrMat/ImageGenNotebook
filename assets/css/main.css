@@ -2352,6 +2352,12 @@ button,
   opacity: 0.9;
 }
 
+.image.fit img,
+.image.main img {
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+
 /* Prevent body scroll when modal is open */
 body.modal-open {
   overflow: hidden;
