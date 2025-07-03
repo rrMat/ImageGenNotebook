@@ -2,55 +2,61 @@
     'use strict';
 
     $(document).ready(function() {
-        // Get the modal
         var modal = $('#imageModal');
         var modalImg = $('#modalImage');
         var captionText = $('#caption');
         var closeBtn = $('.close');
+        var scale = 1;
+        var minScale = 0.5;
+        var maxScale = 5;
 
-        // Add click event to all images within .image.fit containers
+        // Add click event to all images
         $('.image.fit img, .image.main img').on('click', function() {
-            var $this = $(this);
-            var src = $this.attr('src');
-            var alt = $this.attr('alt');
-            
-            // Show modal
-            modal.css('display', 'block');
-            modalImg.attr('src', src);
-            captionText.text(alt || '');
-            
-            // Prevent body scroll when modal is open
-            $('body').addClass('modal-open');
+            modal.show();
+            modalImg.attr('src', this.src);
+            captionText.text($(this).attr('alt'));
+            scale = 1; // Reset zoom
+            modalImg.css('transform', 'scale(' + scale + ')');
         });
 
-        // Close modal when clicking the X
+        // Mouse wheel zoom
+        modalImg.on('wheel', function(e) {
+            e.preventDefault();
+            var delta = e.originalEvent.deltaY;
+            var zoomSpeed = 0.1;
+            
+            if (delta < 0) {
+                // Zoom in
+                scale = Math.min(maxScale, scale + zoomSpeed);
+            } else {
+                // Zoom out
+                scale = Math.max(minScale, scale - zoomSpeed);
+            }
+            
+            $(this).css('transform', 'scale(' + scale + ')');
+        });
+
+        // Double-click to reset zoom
+        modalImg.on('dblclick', function() {
+            scale = 1;
+            $(this).css('transform', 'scale(' + scale + ')');
+        });
+
+        // Close modal events
         closeBtn.on('click', function() {
-            closeModal();
+            modal.hide();
         });
 
-        // Close modal when clicking outside the image
         modal.on('click', function(event) {
             if (event.target === this) {
-                closeModal();
+                modal.hide();
             }
         });
 
-        // Close modal with Escape key
-        $(document).on('keydown', function(event) {
-            if (event.key === 'Escape' && modal.is(':visible')) {
-                closeModal();
+        $(document).on('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modal.hide();
             }
-        });
-
-        // Function to close modal
-        function closeModal() {
-            modal.css('display', 'none');
-            $('body').removeClass('modal-open');
-        }
-
-        // Prevent image dragging in modal
-        modalImg.on('dragstart', function(e) {
-            e.preventDefault();
         });
     });
 
