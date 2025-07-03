@@ -36,40 +36,180 @@
 								<section>
 									<header class="main">
 										<h1>Cat Experiment</h1>
-										<p>Flux Kontext AI Image Generation Study</p>
+										<p>Miao</p>
 									</header>
 
-									<span class="image main"><img src="../images/cat_zoom/cat.png" alt="Cat Experiment" /></span>
-
-									<h2>Experiment Overview</h2>
-									<p>This experiment explores various AI image generation techniques applied to cat-themed imagery. The study investigates different model parameters, prompt engineering strategies, and post-processing techniques.</p>
-
-									<hr class="major" />
-
-									<h2>Technical Documentation</h2>
-									<p><em>Detailed technical documentation will be added here, including:</em></p>
-									<ul>
-										<li>Model parameters and configurations</li>
-										<li>Prompt engineering techniques</li>
-										<li>Processing pipeline details</li>
-										<li>Quality metrics and evaluation</li>
-										<li>Comparative analysis results</li>
-									</ul>
-
-									<hr class="major" />
-
-									<h2>Results Gallery</h2>
-									<p><em>Image gallery and comparative results will be displayed here.</em></p>
+									<span class="image main"><img src="../images/cat_zoom/cat.png" alt="Cat Experiment" /></span>									
+									<p>Here the task is to zoom on the cat, I have taken the image and the prompt from the BFL Playground Examples.</p>
 
 									<div class="box">
-										<p><strong>Status:</strong> This experiment page is currently under development. Content will be populated with detailed technical documentation and results.</p>
+										<h4>Prompt:</h4>
+										<p><em>"camera is closer to the cat who's now looking at the camera"</em></p>
+                                        <h4>NAG Negative Prompt:</h4>
+										<p><em>"noise, blurred, lowres"</em></p>
 									</div>
 
-									<ul class="actions">
-										<li><a href="clay-rider.html" class="button primary">Next: Clay Rider</a></li>
-										<li><a href="intro.html" class="button">Back to Intro</a></li>
-									</ul>
+                                    
+									<h2>Results Gallery</h2>
+									<p>Comparison of different node configurations and their outputs:</p>
 
+                                    <h3>Baseline Configurations</h3>
+                                    <div class="row">
+                                        <div class="col-6 col-12-small">
+                                            <h4>Baseline</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/base_00001_.png" alt="Baseline result" /></span>
+                                            <p><em>Standard Flux Kontext configuration</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>Baseline + Tea Cache</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/base_tea_00001_.png" alt="Baseline with Tea Cache" /></span>
+                                            <p><em>Tea Cache optimization enabled</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>Baseline + Hyper-FLUX</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/base_hyper_00001_.png" alt="Baseline with Hyper-FLUX" /></span>
+                                            <p><em>Hyper-FLUX LoRA acceleration</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>Baseline + Tea + Hyper</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/base_hyper_tea_00001_.png" alt="Combined Tea Cache and Hyper-FLUX" /></span>
+                                            <p><em>Combined Tea Cache + Hyper-FLUX</em></p>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <h3>Detail Daemon Configurations</h3>
+                                    <div class="row">
+                                        <div class="col-6 col-12-small">
+                                            <h4>Detail Daemon</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/Daemon_00001_.png" alt="Detail Daemon result" /></span>
+                                            <p><em>Detail Daemon enhancement</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>Daemon + Tea Cache</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/Daemon_tea_00001_.png" alt="Detail Daemon with Tea Cache" /></span>
+                                            <p><em>Detail Daemon + Tea Cache</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>Daemon + Hyper-FLUX</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/Daemon_hyper_00001_.png" alt="Detail Daemon with Hyper-FLUX" /></span>
+                                            <p><em>Detail Daemon + Hyper-FLUX LoRA</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>Daemon + Tea + Hyper</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/Daemon_tea_hyper_00001_.png" alt="Detail Daemon with all optimizations" /></span>
+                                            <p><em>Detail Daemon + Tea Cache + Hyper-FLUX</em></p>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <h3>NAG (Normalized Attention Guidance) Configurations</h3>
+                                    <div class="row">
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG Only</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_00001_.png" alt="NAG result" /></span>
+                                            <p><em>Normalized Attention Guidance</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Hyper-FLUX</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_hyper_00001_.png" alt="NAG with Hyper-FLUX" /></span>
+                                            <p><em>NAG + Hyper-FLUX LoRA</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Detail Daemon</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_tea_00001_.png" alt="NAG with Detail Daemon" /></span>
+                                            <p><em>NAG + Tea Cache combination</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Tea + Hyper</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_hyper_tea_00001_.png" alt="NAG with optimizations" /></span>
+                                            <p><em>NAG + Tea Cache + Hyper-FLUX</em></p>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <h3>NAG + Detail Daemon Combinations</h3>
+                                    <div class="row">
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Detail Daemon</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_00001_.png" alt="NAG with Detail Daemon" /></span>
+                                            <p><em>NAG + Detail Daemon combination</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Daemon + Tea</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_tea_00001_.png" alt="NAG Daemon Tea" /></span>
+                                            <p><em>NAG + Detail Daemon + Tea Cache</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Daemon + Hyper</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_hyper_00001_.png" alt="NAG Daemon Hyper" /></span>
+                                            <p><em>NAG + Detail Daemon + Hyper-FLUX</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Daemon + Tea + Hyper</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_tea_hyper_00001_.png" alt="All optimizations" /></span>
+                                            <p><em>All optimizations combined</em></p>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <h3> Tryed also DEIS Sampling for Daemon + NAG</h3>
+                                    <div class="row">
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Daemon + DEIS</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_deis_00001_.png" alt="NAG Daemon DEIS" /></span>
+                                            <p><em>NAG + Detail Daemon + DEIS Sampling</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Daemon + Hyper + DEIS</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_hyper_deis_00001_.png" alt="NAG Daemon Hyper DEIS" /></span>
+                                            <p><em>NAG + Detail Daemon + Hyper-FLUX + DEIS</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>NAG + Daemon + Tea + DEIS</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_tea_deis_00001_.png" alt="NAG Daemon Tea DEIS" /></span>
+                                            <p><em>NAG + Detail Daemon + Tea Cache + DEIS</em></p>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <h4>All Features + DEIS</h4>
+                                            <span class="image fit"><img src="../images/cat_zoom/NAG_Daemon_tea_hyper_deis_00001_.png" alt="All features with DEIS" /></span>
+                                            <p><em>Complete pipeline: NAG + Detail Daemon + Tea Cache + Hyper-FLUX + DEIS</em></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <h2>Generation Timings</h2>
+                                        <div class="table-wrapper">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Configuration</th>
+                                                        <th>Time</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>Base</td><td>117.11s</td></tr>
+                                                    <tr><td>Base + Hyper</td><td>63.25s</td></tr>
+                                                    <tr><td>Base + Tea</td><td>64.92s</td></tr>
+                                                    <tr><td>Base + Hyper + Tea</td><td>35.45s</td></tr>
+                                                    <tr><td>NAG</td><td>167.14s</td></tr>
+                                                    <tr><td>NAG + Hyper</td><td>87.32s</td></tr>
+                                                    <tr><td>NAG + Tea</td><td>140.90s</td></tr>
+                                                    <tr><td>NAG + Hyper + Tea</td><td>87.50s</td></tr>
+                                                    <tr><td>Daemon</td><td>106.81s</td></tr>
+                                                    <tr><td>Daemon + Hyper</td><td>60.73s</td></tr>                    
+                                                    <tr><td>Daemon + Tea</td><td>62.34s</td></tr>
+                                                    <tr><td>Daemon + Hyper + Tea</td><td>39.48s</td></tr>
+                                                    <tr><td>NAG + Daemon </td><td>202.34s</td></tr>
+                                                    <tr><td>NAG + Daemon + Hyper</td><td>81.96s</td></tr>
+                                                    <tr><td>NAG + Daemon + Tea</td><td>211.82s</td></tr>
+                                                    <tr><td>NAG + Daemon + Hyper + Tea</td><td>82.05s</td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
 								</section>
 
 						</div>
