@@ -2385,3 +2385,63 @@ body.modal-open {
     font-size: 1em;
   }
 }
+
+/* Navigation arrows */
+.modal-nav {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10003;
+}
+
+.modal-prev {
+    left: 20px;
+    border-radius: 3px 0 0 3px;
+}
+
+.modal-next {
+    right: 20px;
+    border-radius: 0 3px 3px 0;
+}
+
+.modal-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f56a6a;
+}
+
+.modal-nav.disabled {
+    color: #666;
+    cursor: not-allowed;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-nav.disabled:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #666;
+}
+
+@media screen and (max-width: 736px) {
+    .modal-nav {
+        font-size: 18px;
+        padding: 12px;
+        margin-top: -18px;
+    }
+    
+    .modal-prev {
+        left: 10px;
+    }
+    
+    .modal-next {
+        right: 10px;
+    }
+}

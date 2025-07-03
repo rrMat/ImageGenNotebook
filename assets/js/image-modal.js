@@ -7,6 +7,10 @@
         var captionText = $('#caption');
         var closeBtn = $('.close');
         
+        // Gallery state
+        var currentImageIndex = 0;
+        var imageElements = [];
+        
         // Transform state
         var scale = 1;
         var translateX = 0;
@@ -30,13 +34,75 @@
             updateTransform();
         }
 
-        // Add click event to all images
-        $('.image.fit img, .image.main img').on('click', function() {
-            modal.show();
-            modalImg.attr('src', this.src);
-            captionText.text($(this).attr('alt'));
+        function showImage(index) {
+            if (index < 0 || index >= imageElements.length) return;
+            
+            currentImageIndex = index;
+            var img = imageElements[index];
+            var fullSrc = $(img).data('full') || img.src;
+            
+            modalImg.attr('src', fullSrc);
+            captionText.text($(img).attr('alt') + ` (${index + 1} of ${imageElements.length})`);
             resetTransform();
+            
+            // Update navigation button states
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            $('.modal-prev').toggleClass('disabled', currentImageIndex === 0);
+            $('.modal-next').toggleClass('disabled', currentImageIndex === imageElements.length - 1);
+        }
+
+        function goToPrevious() {
+            if (currentImageIndex > 0) {
+                showImage(currentImageIndex - 1);
+            }
+        }
+
+        function goToNext() {
+            if (currentImageIndex < imageElements.length - 1) {
+                showImage(currentImageIndex + 1);
+            }
+        }
+
+        // Initialize gallery - collect all images on page load
+        function initializeGallery() {
+            imageElements = $('.image.fit img, .image.main img').get();
+        }
+
+        // Add click event to all images
+        $(document).on('click', '.image.fit img, .image.main img', function() {
+            initializeGallery();
+            currentImageIndex = imageElements.indexOf(this);
+            modal.show();
+            showImage(currentImageIndex);
+            $('body').addClass('modal-open');
         });
+
+        // Keyboard navigation
+        $(document).on('keydown', function(e) {
+            if (!modal.is(':visible')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    modal.hide();
+                    $('body').removeClass('modal-open');
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    goToPrevious();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    goToNext();
+                    break;
+            }
+        });
+
+        // Navigation button events
+        $(document).on('click', '.modal-prev:not(.disabled)', goToPrevious);
+        $(document).on('click', '.modal-next:not(.disabled)', goToNext);
 
         // Mouse wheel zoom
         modalImg.on('wheel', function(e) {
@@ -132,17 +198,13 @@
         // Close modal events
         closeBtn.on('click', function() {
             modal.hide();
+            $('body').removeClass('modal-open');
         });
 
         modal.on('click', function(event) {
             if (event.target === this) {
                 modal.hide();
-            }
-        });
-
-        $(document).on('keydown', function(e) {
-            if (e.key === 'Escape') {
-                modal.hide();
+                $('body').removeClass('modal-open');
             }
         });
     });
