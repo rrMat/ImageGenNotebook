@@ -33,40 +33,196 @@
 								<section>
 									<header class="main">
 										<h1>Snowy City Experiment</h1>
-										<p>Flux Kontext AI Image Generation Study</p>
+										<p>If you think about it it is almost Christmas</p>
 									</header>
 
-									<span class="image main"><img src="../images/pic11.jpg" alt="Snowy City Experiment" /></span>
+									<span class="image main"><img src="../images/snowy_city/sunny.png" alt="Snowy City Experiment" /></span>
 
 									<h2>Experiment Overview</h2>
-									<p>This experiment explores urban winter landscape generation, focusing on atmospheric effects, lighting, and architectural details in snow-covered city environments.</p>
-
-									<hr class="major" />
-
-									<h2>Technical Documentation</h2>
-									<p><em>Detailed technical documentation will be added here, including:</em></p>
-									<ul>
-										<li>Winter atmosphere simulation</li>
-										<li>Snow particle and accumulation effects</li>
-										<li>Urban lighting in winter conditions</li>
-										<li>Architectural detail preservation</li>
-										<li>Weather effect integration</li>
-									</ul>
-
-									<hr class="major" />
-
-									<h2>Results Gallery</h2>
-									<p><em>Image gallery and comparative results will be displayed here.</em></p>
+									<p>Can Flux Context change the weather?</p>
 
 									<div class="box">
-										<p><strong>Status:</strong> This experiment page is currently under development. Content will be populated with detailed technical documentation and results.</p>
+										<h4>Prompt:</h4>
+										<p><em>"A bustling city street covered in fresh snow, glowing streetlights, people in winter clothing, snowflakes falling, reflections on wet pavement, detailed buildings"</em></p>
+										<h4>NAG Negative Prompt:</h4>
+										<p><em>"noise, blurred, lowres"</em></p>
+									</div>
+
+									<h2>Results Gallery</h2>
+									<p>Comparison of different node configurations and their outputs:</p>
+
+									<h3>Flux Pro Result</h3>
+									<span class="image main"><img src="../images/snowy_city/flux.png" alt="Flux Pro" /></span>	
+
+									<h3>Baseline Configurations</h3>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h4>Baseline</h4>
+											<span class="image fit"><img src="../images/snowy_city/base_00001_.png" alt="Baseline result" /></span>
+											<p><em>Standard Flux Kontext configuration</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Baseline + Tea Cache</h4>
+											<span class="image fit"><img src="../images/snowy_city/base_tea_00001_.png" alt="Baseline with Tea Cache" /></span>
+											<p><em>Tea Cache optimization enabled</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Baseline + Hyper-FLUX</h4>
+											<span class="image fit"><img src="../images/snowy_city/base_hyper_00001_.png" alt="Baseline with Hyper-FLUX" /></span>
+											<p><em>Hyper-FLUX LoRA acceleration</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Baseline + Tea + Hyper</h4>
+											<span class="image fit"><img src="../images/snowy_city/base_hyper_tea_00001_.png" alt="Combined Tea Cache and Hyper-FLUX" /></span>
+											<p><em>Combined Tea Cache + Hyper-FLUX</em></p>
+										</div>
+									</div>
+
+									<hr>
+
+									<h3>Detail Daemon Configurations</h3>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h4>Detail Daemon</h4>
+											<span class="image fit"><img src="../images/snowy_city/Daemon_00001_.png" alt="Detail Daemon result" /></span>
+											<p><em>Detail Daemon enhancement</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Daemon + Tea Cache</h4>
+											<span class="image fit"><img src="../images/snowy_city/Daemon_tea_00001_.png" alt="Detail Daemon with Tea Cache" /></span>
+											<p><em>Detail Daemon + Tea Cache</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Daemon + Hyper-FLUX</h4>
+											<span class="image fit"><img src="../images/snowy_city/Daemon_hyper_00001_.png" alt="Detail Daemon with Hyper-FLUX" /></span>
+											<p><em>Detail Daemon + Hyper-FLUX LoRA</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Daemon + Tea + Hyper</h4>
+											<span class="image fit"><img src="../images/snowy_city/Daemon_tea_hyper_00001_.png" alt="Detail Daemon with all optimizations" /></span>
+											<p><em>Detail Daemon + Tea Cache + Hyper-FLUX</em></p>
+										</div>
+									</div>
+
+									<hr>
+
+									<h3>NAG (Normalized Attention Guidance) Configurations</h3>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h4>NAG Only</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_00001_.png" alt="NAG result" /></span>
+											<p><em>Normalized Attention Guidance</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Hyper-FLUX</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_hyper_00001_.png" alt="NAG with Hyper-FLUX" /></span>
+											<p><em>NAG + Hyper-FLUX result</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Tea Cache</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_tea_00001_.png" alt="NAG with Tea Cache" /></span>
+											<p><em>NAG + Tea Cache result</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Tea + Hyper</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_hyper_tea_00001_.png" alt="NAG with Tea + Hyper" /></span>
+											<p><em>NAG + Tea + Hyper result</em></p>
+										</div>
+									</div>
+
+									<hr>
+
+									<h3>NAG + Detail Daemon Combinations</h3>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h4>NAG + Detail Daemon</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_00001_.png" alt="NAG with Detail Daemon" /></span>
+											<p><em>NAG + Detail Daemon combination</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Daemon + Tea</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_tea_00001_.png" alt="NAG Daemon Tea" /></span>
+											<p><em>NAG + Detail Daemon + Tea Cache</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Daemon + Hyper</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_hyper_00001_.png" alt="NAG Daemon Hyper" /></span>
+											<p><em>NAG + Detail Daemon + Hyper-FLUX</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Daemon + Tea + Hyper</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_tea_hyper_00001_.png" alt="NAG Daemon Tea Hyper" /></span>
+											<p><em>NAG + Detail Daemon + Tea Cache + Hyper-FLUX</em></p>
+										</div>
+									</div>
+
+									<hr>
+
+									<h3>DEIS Sampling for Daemon + NAG</h3>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h4>NAG + Daemon + DEIS</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_deis_00001_.png" alt="NAG Daemon DEIS" /></span>
+											<p><em>NAG + Detail Daemon + DEIS Sampling</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Daemon + Hyper + DEIS</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_hyper_deis_00001_.png" alt="NAG Daemon Hyper DEIS" /></span>
+											<p><em>NAG + Detail Daemon + Hyper-FLUX + DEIS</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Daemon + Tea + DEIS</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_tea_deis_00001_.png" alt="NAG Daemon Tea DEIS" /></span>
+											<p><em>NAG + Detail Daemon + Tea Cache + DEIS</em></p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>NAG + Daemon + Tea + Hyper + DEIS</h4>
+											<span class="image fit"><img src="../images/snowy_city/NAG_Daemon_tea_hyper_deis_00001_.png" alt="NAG Daemon Tea Hyper DEIS" /></span>
+											<p><em>NAG + Detail Daemon + Tea Cache + Hyper + DEIS</em></p>
+										</div>
+									</div>
+
+									<h2>Comments</h2>
+									<p>Here I will add my comments</p>
+
+									<h2>Generation Timings</h2>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Configuration</th>
+													<th>Time</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr><td>Base</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>Base + Hyper</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>Base + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>Base + Hyper + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Hyper</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Hyper + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>Daemon</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>Daemon + Hyper</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>Daemon + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>Daemon + Hyper + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Daemon</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Daemon + Hyper</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Daemon + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Daemon + Hyper + Tea</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Daemon + DEIS</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Daemon + Hyper + DEIS</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>NAG + Daemon + Tea + DEIS</td><td>[PLACEHOLDER]</td></tr>
+												<tr><td>All Features + DEIS</td><td>[PLACEHOLDER]</td></tr>
+											</tbody>
+										</table>
 									</div>
 
 									<ul class="actions">
 										<li><a href="umbrella-girl.html" class="button primary">Next: Umbrella Girl</a></li>
 										<li><a href="mage-princess.html" class="button">Previous: Mage & Princess</a></li>
 									</ul>
-
 								</section>
 
 						</div>
