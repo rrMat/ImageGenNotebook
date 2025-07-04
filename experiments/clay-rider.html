@@ -9,6 +9,7 @@
 		<title>Clay Rider Experiment - Flux Kontext</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css" integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -36,7 +37,8 @@
 		<p>Flux Kontext AI Image Generation Study</p>
 	</header>
 
-	<span class="image main"><img src="../images/clay_rider/before_clay.png" alt="Clay Rider Experiment" /></span>
+	<span class="image main">
+		<img src="../images/clay_rider/before_clay.png" alt="Clay Rider Experiment" /></span>
 
 	<h2>Experiment Overview</h2>
 	<p>This experiment focuses on clay-style artistic rendering and character transformation techniques using advanced AI image generation models.</p>
@@ -51,130 +53,180 @@
 	<h2>Results Gallery</h2>
 	<p>Comparison of different node configurations and their outputs:</p>
 
-	<h3>Flux Pro Result</h3>
-	<span class="image main"><img src="../images/clay_rider/flux.png" alt="Flux Pro" /></span>	
+	<!-- Add a wrapper for all gallery images -->
+	<div id="clay-gallery" class="pswp-gallery">
 
-	<h3>Baseline Configurations</h3>
-	<div class="row">
-		<div class="col-6 col-12-small">
-			<h4>Baseline</h4>
-			<span class="image fit"><img src="../images/clay_rider/base_00002_.png" alt="Baseline result" /></span>
-			<p><em>Standard Flux Kontext configuration</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>Baseline + Tea Cache</h4>
-			<span class="image fit"><img src="../images/clay_rider/base_tea_00002_.png" alt="Baseline with Tea Cache" /></span>
-			<p><em>Tea Cache optimization enabled</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>Baseline + Hyper-FLUX</h4>
-			<span class="image fit"><img src="../images/clay_rider/base_hyper_00003_.png" alt="Baseline with Hyper-FLUX" /></span>
-			<p><em>Hyper-FLUX LoRA acceleration</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>Baseline + Tea + Hyper</h4>
-			<span class="image fit"><img src="../images/clay_rider/base_hyper_tea_00002_.png" alt="Combined Tea Cache and Hyper-FLUX" /></span>
-			<p><em>Combined Tea Cache + Hyper-FLUX</em></p>
-		</div>
-	</div>
+	    <h3>Flux Pro Result</h3>
+	    <span class="image main"><a href="../images/clay_rider/flux.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Flux Pro result with optimized configurations" target="_blank">
+			<img src="../images/clay_rider/flux.png" alt="Flux Pro" />
+		</a>
+		</span>	
 
-	<hr>
+	    <h3>Baseline Configurations</h3>
+	    <div class="row">
+	        <div class="col-6 col-12-small">
+	            <h4>Baseline</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/base_00002_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Standard Flux Kontext configuration" target="_blank">
+	                    <img src="../images/clay_rider/base_00002_.png" alt="Baseline result" />
+	                </a>
+	            </span>
+	            <p><em>Standard Flux Kontext configuration</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>Baseline + Tea Cache</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/base_tea_00002_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Tea Cache optimization enabled" target="_blank">
+	                    <img src="../images/clay_rider/base_tea_00002_.png" alt="Baseline with Tea Cache" />
+	                </a>
+	            </span>
+	            <p><em>Tea Cache optimization enabled</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>Baseline + Hyper-FLUX</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/base_hyper_00003_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Hyper-FLUX LoRA acceleration" target="_blank">
+	                    <img src="../images/clay_rider/base_hyper_00003_.png" alt="Baseline with Hyper-FLUX" />
+	                </a>
+	            </span>
+	            <p><em>Hyper-FLUX LoRA acceleration</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>Baseline + Tea + Hyper</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/base_hyper_tea_00002_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Combined Tea Cache + Hyper-FLUX" target="_blank">
+	                    <img src="../images/clay_rider/base_hyper_tea_00002_.png" alt="Combined Tea Cache and Hyper-FLUX" />
+	                </a>
+	            </span>
+	            <p><em>Combined Tea Cache + Hyper-FLUX</em></p>
+	        </div>
+	    </div>
 
-	<h3>Detail Daemon Configurations</h3>
-	<div class="row">
-		<div class="col-6 col-12-small">
-			<h4>Detail Daemon</h4>
-			<span class="image fit"><img src="../images/clay_rider/Daemon_00001_.png" alt="Detail Daemon result" /></span>
-			<p><em>Detail Daemon enhancement</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>Daemon + Tea Cache</h4>
-			<span class="image fit"><img src="../images/clay_rider/Daemon_tea_00002_.png" alt="Detail Daemon with Tea Cache" /></span>
-			<p><em>Detail Daemon + Tea Cache</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>Daemon + Hyper-FLUX</h4>
-			<span class="image fit"><img src="../images/clay_rider/Daemon_hyper_00001_.png" alt="Detail Daemon with Hyper-FLUX" /></span>
-			<p><em>Detail Daemon + Hyper-FLUX LoRA</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>Daemon + Tea + Hyper</h4>
-			<span class="image fit"><img src="../images/clay_rider/Daemon_tea_hyper_00001_.png" alt="Detail Daemon with all optimizations" /></span>
-			<p><em>Detail Daemon + Tea Cache + Hyper-FLUX</em></p>
-		</div>
-	</div>
+	    <hr>
 
-	<hr>
+	    <h3>Detail Daemon Configurations</h3>
+	    <div class="row">
+	        <div class="col-6 col-12-small">
+	            <h4>Detail Daemon</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/Daemon_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Detail Daemon enhancement" target="_blank">
+	                    <img src="../images/clay_rider/Daemon_00001_.png" alt="Detail Daemon result" />
+	                </a>
+	            </span>
+	            <p><em>Detail Daemon enhancement</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>Daemon + Tea Cache</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/Daemon_tea_00002_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Detail Daemon + Tea Cache" target="_blank">
+	                    <img src="../images/clay_rider/Daemon_tea_00002_.png" alt="Detail Daemon with Tea Cache" />
+	                </a>
+	            </span>
+	            <p><em>Detail Daemon + Tea Cache</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>Daemon + Hyper-FLUX</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/Daemon_hyper_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Detail Daemon + Hyper-FLUX LoRA" target="_blank">
+	                    <img src="../images/clay_rider/Daemon_hyper_00001_.png" alt="Detail Daemon with Hyper-FLUX" />
+	                </a>
+	            </span>
+	            <p><em>Detail Daemon + Hyper-FLUX LoRA</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>Daemon + Tea + Hyper</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/Daemon_tea_hyper_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Detail Daemon + Tea Cache + Hyper-FLUX" target="_blank">
+	                    <img src="../images/clay_rider/Daemon_tea_hyper_00001_.png" alt="Detail Daemon with all optimizations" />
+	                </a>
+	            </span>
+	            <p><em>Detail Daemon + Tea Cache + Hyper-FLUX</em></p>
+	        </div>
+	    </div>
 
-	<h3>NAG (Normalized Attention Guidance) Configurations</h3>
-	<div class="row">
-		<div class="col-6 col-12-small">
-			<h4>NAG Only</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_00001_.png" alt="NAG result" /></span>
-			<p><em>Normalized Attention Guidance</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Hyper-FLUX</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_hyper_00002_.png" alt="NAG with Hyper-FLUX" /></span>
-			<p><em>NAG + Hyper-FLUX result</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Tea Cache</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_tea_00001_.png" alt="NAG with Tea Cache" /></span>
-			<p><em>NAG + Tea Cache result</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Tea + Hyper</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_hyper_tea_00001_.png" alt="NAG with Tea + Hyper" /></span>
-			<p><em>NAG + Tea + Hyper result</em></p>
-		</div>
-	</div>
+	    <hr>
 
-	<hr>
+	    <h3>NAG (Normalized Attention Guidance) Configurations</h3>
+	    <div class="row">
+	        <div class="col-6 col-12-small">
+	            <h4>NAG Only</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="Normalized Attention Guidance" target="_blank">
+	                    <img src="../images/clay_rider/NAG_00001_.png" alt="NAG result" />
+	                </a>
+	            </span>
+	            <p><em>Normalized Attention Guidance</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>NAG + Hyper-FLUX</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_hyper_00002_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="NAG + Hyper-FLUX result" target="_blank">
+	                    <img src="../images/clay_rider/NAG_hyper_00002_.png" alt="NAG with Hyper-FLUX" />
+	                </a>
+	            </span>
+	            <p><em>NAG + Hyper-FLUX result</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>NAG + Tea Cache</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_tea_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="NAG + Tea Cache result" target="_blank">
+	                    <img src="../images/clay_rider/NAG_tea_00001_.png" alt="NAG with Tea Cache" />
+	                </a>
+	            </span>
+	            <p><em>NAG + Tea Cache result</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>NAG + Tea + Hyper</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_hyper_tea_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="NAG + Tea + Hyper result" target="_blank">
+	                    <img src="../images/clay_rider/NAG_hyper_tea_00001_.png" alt="NAG with Tea + Hyper" />
+	                </a>
+	            </span>
+	            <p><em>NAG + Tea + Hyper result</em></p>
+	        </div>
+	    </div>
 
-	<h3>NAG + Detail Daemon Combinations</h3>
-	<div class="row">
-		<div class="col-6 col-12-small">
-			<h4>NAG + Detail Daemon</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_Daemon_00001_.png" alt="NAG with Detail Daemon" /></span>
-			<p><em>NAG + Detail Daemon combination</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Daemon + Tea</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_Daemon_tea_00001_.png" alt="NAG Daemon Tea" /></span>
-			<p><em>NAG + Detail Daemon + Tea Cache</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Daemon + Hyper</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_Daemon_hyper_00001_.png" alt="NAG Daemon Hyper" /></span>
-			<p><em>NAG + Detail Daemon + Hyper-FLUX</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Daemon + Tea + Hyper</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_Daemon_tea_hyper_00001_.png" alt="NAG Daemon Tea Hyper" /></span>
-			<p><em>NAG + Detail Daemon + Tea Chache + Hyper-FLUX</em></p>
-		</div>
-	</div>
+	    <hr>
 
-	<hr>
-
-	<h3>DEIS Sampling for Daemon + NAG</h3>
-	<div class="row">
-		<div class="col-6 col-12-small">
-			<h4>NAG + Daemon + DEIS</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_Daemon_deis_00001_.png" alt="NAG Daemon DEIS" /></span>
-			<p><em>NAG + Detail Daemon + DEIS Sampling</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Daemon + Hyper + DEIS</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_Daemon_hyper_deis_00001_.png" alt="NAG Daemon Hyper DEIS" /></span>
-			<p><em>NAG + Detail Daemon + Hyper-FLUX + DEIS</em></p>
-		</div>
-		<div class="col-6 col-12-small">
-			<h4>NAG + Daemon + Tea + DEIS</h4>
-			<span class="image fit"><img src="../images/clay_rider/NAG_Daemon_tea_deis_00001_.png" alt="NAG Daemon Tea DEIS" /></span>
-			<p><em>NAG + Detail Daemon + Tea Cache + DEIS</em></p>
-		</div>
+	    <h3>NAG + Detail Daemon Combinations</h3>
+	    <div class="row">
+	        <div class="col-6 col-12-small">
+	            <h4>NAG + Detail Daemon</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_Daemon_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="NAG + Detail Daemon combination" target="_blank">
+	                    <img src="../images/clay_rider/NAG_Daemon_00001_.png" alt="NAG with Detail Daemon" />
+	                </a>
+	            </span>
+	            <p><em>NAG + Detail Daemon combination</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>NAG + Daemon + Tea</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_Daemon_tea_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="NAG + Detail Daemon + Tea Cache" target="_blank">
+	                    <img src="../images/clay_rider/NAG_Daemon_tea_00001_.png" alt="NAG Daemon Tea" />
+	                </a>
+	            </span>
+	            <p><em>NAG + Detail Daemon + Tea Cache</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>NAG + Daemon + Hyper</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_Daemon_hyper_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="NAG + Detail Daemon + Hyper-FLUX" target="_blank">
+	                    <img src="../images/clay_rider/NAG_Daemon_hyper_00001_.png" alt="NAG Daemon Hyper" />
+	                </a>
+	            </span>
+	            <p><em>NAG + Detail Daemon + Hyper-FLUX</em></p>
+	        </div>
+	        <div class="col-6 col-12-small">
+	            <h4>NAG + Daemon + Tea + Hyper</h4>
+	            <span class="image fit">
+	                <a href="../images/clay_rider/NAG_Daemon_tea_hyper_00001_.png" data-pswp-width="752" data-pswp-height="1392" data-pswp-caption="NAG + Detail Daemon + Tea Chache + Hyper-FLUX" target="_blank">
+	                    <img src="../images/clay_rider/NAG_Daemon_tea_hyper_00001_.png" alt="NAG Daemon Tea Hyper" />
+	                </a>
+	            </span>
+	            <p><em>NAG + Detail Daemon + Tea Chache + Hyper-FLUX</em></p>
+	        </div>
+	    </div>
 	</div>
 
 	<h2>Comments</h2>
@@ -214,65 +266,55 @@
 		<li><a href="desert-girls.html" class="button primary">Next: Desert Girls</a></li>
 		<li><a href="cat.html" class="button">Previous: Cat</a></li>
 	</ul>
+	</section>
+</div>
+</div>
 
-</section>
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <div class="inner">
 
-						</div>
-					</div>
+					<!-- Search -->
+					<section id="search" class="alt">
+						<form method="post" action="#">
+							<input type="text" name="query" id="query" placeholder="Search" />
+						</form>
+					</section>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+                    <!-- Menu -->
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>Menu</h2>
+                        </header>
+                        <ul>
+                            <li><a href="../index.html">Homepage</a></li>
+                            <li>
+                                <span class="opener">Flux Kontext Experiments</span>
+                                <ul>
+                                    <li><a href="intro.html">Intro</a></li>
+                                    <li><a href="cat.html">Cat</a></li>
+                                    <li><a href="clay-rider.html">Clay Rider</a></li>
+                                    <li><a href="desert-girls.html">Desert Girls</a></li>
+                                    <li><a href="dino-museum.html">Dino Museum</a></li>
+                                    <li><a href="mage-princess.html">Mage & Princess</a></li>
+                                    <li><a href="snowy-city.html">Snowy City</a></li>
+                                    <li><a href="umbrella-girl.html">Umbrella Girl</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+                </div>
+            </div>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="../index.html">Homepage</a></li>
-										<li>
-											<span class="opener">Flux Kontext Experiments</span>
-											<ul>
-												<li><a href="intro.html">Intro</a></li>
-												<li><a href="cat.html">Cat</a></li>
-												<li><a href="clay-rider.html">Clay Rider</a></li>
-												<li><a href="desert-girls.html">Desert Girls</a></li>
-												<li><a href="dino-museum.html">Dino Museum</a></li>
-												<li><a href="mage-princess.html">Mage & Princess</a></li>
-												<li><a href="snowy-city.html">Snowy City</a></li>
-												<li><a href="umbrella-girl.html">Umbrella Girl</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
+        </div>
 
-						</div>
-					</div>
-
-			</div>
-		
-		<!-- Image Modal -->
-		<div id="imageModal" class="modal">
-			<span class="close">&times;</span>
-			<img class="modal-content" id="modalImage">
-			<div id="caption"></div>
-		</div>
-
-		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
-			<script src="../assets/js/image-modal.js"></script>
-
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+<script type="module" src="../assets/js/photoswipe-init.js"></script>
 	</body>
 </html>

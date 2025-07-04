@@ -55,7 +55,10 @@
 									<div id="cat-gallery" class="pswp-gallery">
 
 										<h3>Flux Pro Result</h3>
-										<span class="image main"><img src="../images/cat_zoom/flux.png" alt="Flux Pro" /></span>	
+										<span class="image main"><a href="../images/cat_zoom/flux.png" data-pswp-width="1392" data-pswp-height="752" data-pswp-caption="Flux Pro result with optimized configurations" target="_blank">
+                                            <img src="../images/cat_zoom/flux.png" alt="Flux Pro" />
+                                        </a>
+                                        </span>	
 
 										<h3>Baseline Configurations</h3>
 										<div class="row">
@@ -290,6 +293,10 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                <ul class="actions">
+                                    <li><a href="clay-rider.html" class="button primary">Next: Clay Rider</a></li>
+                                    <li><a href="intro.html" class="button">Intro</a></li>
+                                </ul>
 								</section>
 
 						</div>
@@ -341,41 +348,6 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+            <script type="module" src="../assets/js/photoswipe-init.js"></script>
 			<script type="module">
-  import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js';
-  
-  const options = {
-    gallery: '#cat-gallery',
-    children: 'a',
-    pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js')
-  };
-  
-  const lightbox = new PhotoSwipeLightbox(options);
-  
-  // Add custom caption support
-  lightbox.on('uiRegister', function() {
-    lightbox.pswp.ui.registerElement({
-      name: 'custom-caption',
-      order: 9,
-      isButton: false,
-      appendTo: 'root',
-      html: 'Caption text',
-      onInit: (el, pswp) => {
-        lightbox.pswp.on('change', () => {
-          const currSlideElement = lightbox.pswp.currSlide.data.element;
-          let captionHTML = '';
-          if (currSlideElement) {
-            // Get caption from data-pswp-caption attribute
-            captionHTML = currSlideElement.getAttribute('data-pswp-caption') || 
-                         currSlideElement.querySelector('img').getAttribute('alt') || '';
-          }
-          el.innerHTML = captionHTML;
-        });
-      }
-    });
-  });
-  
-  lightbox.init();
-</script>
-
 
