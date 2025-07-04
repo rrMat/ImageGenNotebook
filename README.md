@@ -1,3 +1,3 @@
 # This is my Image Generation Notebook!
 ---
-Check out the [page!](https://rrmat.github.io/ImageGenNotebook/)
+To get the full experience check out my [page!](https://rrmat.github.io/ImageGenNotebook/)
