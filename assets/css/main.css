@@ -2272,176 +2272,18 @@ button,
     margin-top: 0;
     padding-top: 0; }
 
-/* Image Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10001;
-  padding-top: 50px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(5px);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 90%;
-  max-width: 1200px;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 0.375em;
-  animation: zoom 0.3s ease;
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.close {
+.pswp__custom-caption {
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 16px;
+  color: #fff;
+  width: calc(100% - 32px);
+  max-width: 600px;
+  padding: 8px 16px;
+  border-radius: 4px;
   position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
-  z-index: 10002;
-}
-
-.close:hover,
-.close:focus {
-  color: #f56a6a;
-  text-decoration: none;
-}
-
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
   font-family: "Roboto Slab", serif;
-  font-size: 1.1em;
-}
-
-/* Clickable images cursor */
-.image.fit img,
-.image.main img {
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.image.fit img:hover,
-.image.main img:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
-}
-
-.image.fit img,
-.image.main img {
-  max-width: 400px;
-  height: auto;
-  object-fit: cover;
-
-/* Prevent body scroll when modal is open */
-body.modal-open {
-  overflow: hidden;
-}
-
-/* Mobile responsive */
-@media screen and (max-width: 736px) {
-  .modal {
-    padding-top: 20px;
-  }
-  
-  .modal-content {
-    width: 95%;
-    max-height: 80vh;
-  }
-  
-  .close {
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-  }
-  
-  #caption {
-    width: 90%;
-    font-size: 1em;
-  }
-}
-
-/* Navigation arrows */
-.modal-nav {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    transition: 0.3s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10003;
-}
-
-.modal-prev {
-    left: 20px;
-    border-radius: 3px 0 0 3px;
-}
-
-.modal-next {
-    right: 20px;
-    border-radius: 0 3px 3px 0;
-}
-
-.modal-nav:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #f56a6a;
-}
-
-.modal-nav.disabled {
-    color: #666;
-    cursor: not-allowed;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.modal-nav.disabled:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #666;
-}
-
-@media screen and (max-width: 736px) {
-    .modal-nav {
-        font-size: 18px;
-        padding: 12px;
-        margin-top: -18px;
-    }
-    
-    .modal-prev {
-        left: 10px;
-    }
-    
-    .modal-next {
-        right: 10px;
-    }
+  text-align: center;
 }
