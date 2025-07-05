@@ -31,6 +31,7 @@
             }
             
             .comparison-title {
+                margin-top: 3em;
                 margin-bottom: 1em;
                 text-align: center;
             }
@@ -58,7 +59,7 @@
                             <!-- Content -->
                                 <section>
                                     <header class="main">
-                                        <h1>Style Trasnfer with Auto-Tagger</h1>
+                                        <h1>Style Transfer with Auto-Tagger</h1>
                                         <p>Using a Ghibli Style LoRA</p>
                                     </header>
 
@@ -74,9 +75,10 @@
                                     <!-- Workflow description box -->
                                     <h2>Workflow Description:</h2>
                                         <p>
-                                            Flux context and GPT-image-1 are here and they quite powerful tools, one of the main uses I see is style transfer. What I propose here is a
+                                            Flux context and GPT-image-1 are here and they are quite powerful tools. One of the main uses I see is style transfer. What I propose here is a
                                              <a href="../workflows/flux_auto_tagger.json" target="_blank">workflow</a> that uses Flux
-                                            (or any other Img2Img2 model) to perform style transfer using both a <a href="https://civitai.com/models/1747386?modelVersionId=1977597" target="_blank">LoRA</a> I trained  (yes it is oversized) and a custom tagger to close the gap with multimodal models like GPT-4.
+                                            (or any other Img2Img2 model) to perform style transfer using both a <a href="https://civitai.com/models/1747386?modelVersionId=1977597" target="_blank">LoRA</a> I trained  (yes it is oversized) 
+                                            and a custom tagger to close the gap with multimodal models like GPT-4.
                                             The tagger of choice is <a href="https://github.com/miaoshouai/ComfyUI-Miaoshouai-Tagger" target="_blank">Miaoshouai</a>, a Florence 2 based tagger,
                                             which in my opinion does a good job at tagging while also allowing to replace tags in the generated caption.
                                             The workflow is designed to take an original image and apply a Ghibli-style transformation, while maintaining the essence of the original content.
@@ -93,7 +95,6 @@
                                             <img slot="second" src="../images/ghibli/basic_instinct_ghibli.jpg" alt="Basic Instinct Ghibli" />
                                         </img-comparison-slider>
                                     </div>
-
                                     <div class="comparison-container">
                                         <h3 class="comparison-title">Grand Budapest Hotel</h3>
                                         <img-comparison-slider>
