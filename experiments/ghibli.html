@@ -11,8 +11,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css" integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="../assets/css/main.css"/>
+
+        <style>
+            /* Image comparison slider styles */
+            .comparison-container img-comparison-slider {
+                width: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                display: block;
+            }
+            
+            .comparison-container img-comparison-slider img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Changed back to 'cover' for consistent alignment */
+                object-position: center; /* Ensures both images are centered */
+            }
+            
+            .comparison-title {
+                margin-bottom: 1em;
+                text-align: center;
+            }
+        </style>
     </head>
+
     <body class="is-preload">
 
         <!-- Wrapper -->
@@ -34,8 +58,8 @@
                             <!-- Content -->
                                 <section>
                                     <header class="main">
-                                        <h1>Ghibli Workflow Experiment</h1>
-                                        <p>Studio Ghibli Style Transfer</p>
+                                        <h1>Style Trasnfer with Auto-Tagger</h1>
+                                        <p>Using a Ghibli Style LoRA</p>
                                     </header>
 
                                     <!-- Top workflow image -->
@@ -48,47 +72,59 @@
                                     </div>
 
                                     <!-- Workflow description box -->
-                                    <div class="box">
-                                        <h4>Workflow Description:</h4>
+                                    <h2>Workflow Description:</h2>
                                         <p>
-                                            This workflow demonstrates the power of Studio Ghibli-style LoRA for transforming images into the distinctive anime art style. 
-                                            The process uses Flux Kontext to maintain character consistency while applying the stylistic transformation.
+                                            Flux context and GPT-image-1 are here and they quite powerful tools, one of the main uses I see is style transfer. What I propose here is a
+                                             <a href="../workflows/flux_auto_tagger.json" target="_blank">workflow</a> that uses Flux
+                                            (or any other Img2Img2 model) to perform style transfer using both a LoRA and a custom tagger to close the gap with multimodal models like GPT-4.
+                                            The tagger of choice is <a href="https://github.com/miaoshouai/ComfyUI-Miaoshouai-Tagger" target="_blank">Miaoshouai</a>, a Florence 2 based tagger,
+                                            which in my opinion does a good job at tagging while also allowing to replace tags in the generated caption.
+                                            The workflow is designed to take an original image and apply a Ghibli-style transformation, while maintaining the essence of the original content.
                                         </p>
-                                    </div>
-
+                                    
                                     <h2>Image Comparisons</h2>
                                     <p>Compare the original and Ghibli-style images using the sliders below:</p>
 
                                     <!-- Image Comparison Sliders for all pairs in ghibli folder -->
-                                    <h3>Basic Instinct</h3>
-                                    <img-comparison-slider style="max-width: 100%; margin-bottom: 2em;">
-                                        <img slot="first" src="../images/ghibli/basic_instinct.jpg" alt="Basic Instinct Original" />
-                                        <img slot="second" src="../images/ghibli/basic_instinc_ghibli.jpg" alt="Basic Instinct Ghibli" />
-                                    </img-comparison-slider>
+                                    <div class="comparison-container">
+                                        <h3 class="comparison-title">Basic Instinct</h3>
+                                        <img-comparison-slider>
+                                            <img slot="first" src="../images/ghibli/basic_instinct.jpg" alt="Basic Instinct Original" />
+                                            <img slot="second" src="../images/ghibli/basic_instinct_ghibli.jpg" alt="Basic Instinct Ghibli" />
+                                        </img-comparison-slider>
+                                    </div>
 
-                                    <h3>Grand Budapest Hotel</h3>
-                                    <img-comparison-slider style="max-width: 100%; margin-bottom: 2em;">
-                                        <img slot="first" src="../images/ghibli/grand_budapest.jpg" alt="Grand Budapest Original" />
-                                        <img slot="second" src="../images/ghibli/grand_budapest_ghibli.jpg" alt="Grand Budapest Ghibli" />
-                                    </img-comparison-slider>
+                                    <div class="comparison-container">
+                                        <h3 class="comparison-title">Grand Budapest Hotel</h3>
+                                        <img-comparison-slider>
+                                            <img slot="first" src="../images/ghibli/grand_budapest.jpg" alt="Grand Budapest Original" />
+                                            <img slot="second" src="../images/ghibli/grand_budapest_ghibli.jpg" alt="Grand Budapest Ghibli" />
+                                        </img-comparison-slider>
+                                    </div>
 
-                                    <h3>Kill Bill</h3>
-                                    <img-comparison-slider style="max-width: 100%; margin-bottom: 2em;">
-                                        <img slot="first" src="../images/ghibli/kill_bill.jpg" alt="Kill Bill Original" />
-                                        <img slot="second" src="../images/ghibli/kill_bill_ghibli.jpg" alt="Kill Bill Ghibli" />
-                                    </img-comparison-slider>
+                                    <div class="comparison-container">
+                                        <h3 class="comparison-title">Kill Bill</h3>
+                                        <img-comparison-slider>
+                                            <img slot="first" src="../images/ghibli/kill_bill.jpg" alt="Kill Bill Original" />
+                                            <img slot="second" src="../images/ghibli/kill_bill_ghibli.jpg" alt="Kill Bill Ghibli" />
+                                        </img-comparison-slider>
+                                    </div>
 
-                                    <h3>Saigon</h3>
-                                    <img-comparison-slider style="max-width: 100%; margin-bottom: 2em;">
-                                        <img slot="first" src="../images/ghibli/saigon.jpg" alt="Saigon Original" />
-                                        <img slot="second" src="../images/ghibli/saigon_ghibli.jpg" alt="Saigon Ghibli" />
-                                    </img-comparison-slider>
+                                    <div class="comparison-container">
+                                        <h3 class="comparison-title">Saigon</h3>
+                                        <img-comparison-slider>
+                                            <img slot="first" src="../images/ghibli/saigon.jpg" alt="Saigon Original" />
+                                            <img slot="second" src="../images/ghibli/saigon_ghibli.jpg" alt="Saigon Ghibli" />
+                                        </img-comparison-slider>
+                                    </div>
 
-                                    <h3>Vietnam</h3>
-                                    <img-comparison-slider style="max-width: 100%; margin-bottom: 2em;">
-                                        <img slot="first" src="../images/ghibli/vietnam.jpg" alt="Vietnam Original" />
-                                        <img slot="second" src="../images/ghibli/vietnam_ghibli.jpg" alt="Vietnam Ghibli" />
-                                    </img-comparison-slider>
+                                    <div class="comparison-container">
+                                        <h3 class="comparison-title">Vietnam</h3>
+                                        <img-comparison-slider>
+                                            <img slot="first" src="../images/ghibli/vietnam.jpg" alt="Vietnam Original" />
+                                            <img slot="second" src="../images/ghibli/vietnam_ghibli.jpg" alt="Vietnam Ghibli" />
+                                        </img-comparison-slider>
+                                    </div>
 
                                 </section>
                         </div>
